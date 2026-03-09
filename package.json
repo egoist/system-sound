@@ -103,7 +103,7 @@
     "singleQuote": true,
     "arrowParens": "always"
   },
-  "packageManager": "yarn@4.12.0",
+  "packageManager": "pnpm@10.6.5",
   "optionalDependencies": {
     "@egoist/system-sound-win32-x64-msvc": "0.0.1",
     "@egoist/system-sound-darwin-x64": "0.0.1",
