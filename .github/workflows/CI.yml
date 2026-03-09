@@ -37,7 +37,7 @@ jobs:
         with:
           components: clippy, rustfmt
       - name: Install dependencies
-        run: pnpm install --ignore-scripts
+        run: pnpm install --ignore-scripts --no-frozen-lockfile
       - name: Oxlint
         run: pnpm lint
       - name: Cargo fmt
@@ -103,7 +103,7 @@ jobs:
         if: ${{ matrix.settings.setup }}
         shell: bash
       - name: Install dependencies
-        run: pnpm install --ignore-scripts
+        run: pnpm install --ignore-scripts --no-frozen-lockfile
       - name: Build
         run: ${{ matrix.settings.build }}
         shell: bash
@@ -146,7 +146,7 @@ jobs:
           cache: pnpm
           architecture: ${{ matrix.settings.architecture }}
       - name: Install dependencies
-        run: pnpm install --ignore-scripts
+        run: pnpm install --ignore-scripts --no-frozen-lockfile
       - name: Download artifacts
         uses: actions/download-artifact@v8
         with:
@@ -201,7 +201,7 @@ jobs:
         run: |
           pnpm config set supportedArchitectures.cpu '["current", "arm64", "x64", "arm"]'
           pnpm config set supportedArchitectures.libc '["current", "musl", "gnu"]'
-          pnpm install --ignore-scripts
+          pnpm install --ignore-scripts --no-frozen-lockfile
       - name: Download artifacts
         uses: actions/download-artifact@v8
         with:
@@ -243,7 +243,7 @@ jobs:
           node-version: 24
           cache: pnpm
       - name: Install dependencies
-        run: pnpm install --ignore-scripts
+        run: pnpm install --ignore-scripts --no-frozen-lockfile
       - name: create npm dirs
         run: pnpm napi create-npm-dirs
       - name: Download all artifacts
